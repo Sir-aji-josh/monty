@@ -5,36 +5,35 @@
 * @counter: line_counter
 * @file: poiner to monty file
 * @content: line content
-*
 * Return: no return
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", fun_push}, {"pall", fun_pall}, {"pint", fun_pint},
-				{"pop", fun_pop},
-				{"swap", fun_swap},
-				{"add", fun_add},
-				{"nop", fun_nop},
-				{"sub", fun_sub},
-				{"div", fun_div},
-				{"mul", fun_mul},
-				{"mod", fun_mod},
-				{"pchar", fun_pchar},
-				{"pstr", fun_pstr},
-				{"rotl", fun_rotl},
-				{"rotr", fun_rotr},
-				{"queue", fun_queue},
-				{"stack", fun_stack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
 	char *op;
 
-	op = strtok(content, " \\");
+	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
-	bus.arg = strtok(NULL, " \\");
+	bus.arg = strtok(NULL, " \n\t");
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
@@ -51,3 +50,4 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		exit(EXIT_FAILURE); }
 	return (1);
 }
+

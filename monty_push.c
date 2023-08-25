@@ -1,12 +1,11 @@
 #include "monty.h"
 /**
- * fun_push - add node to the stack
+ * f_push - add node to the stack
  * @head: stack head
  * @counter: line_number
- *
  * Return: no return
 */
-void fun_push(stack_t **head, unsigned int counter)
+void f_push(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
@@ -14,22 +13,34 @@ void fun_push(stack_t **head, unsigned int counter)
 	{
 		if (bus.arg[0] == '-')
 			j++;
+<<<<<<< HEAD
 		for (; bus.arg[j] != '\n'; j++)
+=======
+		for (; bus.arg[j] != '\0'; j++)
+>>>>>>> 538b61329d9cce2366e90e2e8a5e3e0677f1bb85
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
 				flag = 1;
 		}
 		if (flag == 1)
+<<<<<<< HEAD
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", counter);
+=======
+		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+>>>>>>> 538b61329d9cce2366e90e2e8a5e3e0677f1bb85
 			fclose(bus.file);
 			free(bus.content);
 			free_stack(*head);
 			exit(EXIT_FAILURE);
 		}
 	else
+<<<<<<< HEAD
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", counter);
+=======
+	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+>>>>>>> 538b61329d9cce2366e90e2e8a5e3e0677f1bb85
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
@@ -42,3 +53,4 @@ void fun_push(stack_t **head, unsigned int counter)
 		addqueue(head, n);
 	}
 }
+
