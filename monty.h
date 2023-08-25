@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 #ifndef MONTY_H
 #define MONTY_H
-=======
-#ifndef _MONTY_H_
-#define _MONTY_H_
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -12,11 +8,8 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -28,15 +21,9 @@
  */
 typedef struct stack_s
 {
-<<<<<<< HEAD
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-=======
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
 } stack_t;
 /**
  * struct bus_s - variables -args, file, line content
@@ -48,17 +35,10 @@ typedef struct stack_s
  */
 typedef struct bus_s
 {
-<<<<<<< HEAD
 	char *arg;
 	FILE *file;
 	char *content;
 	int lifi;
-=======
-        char *arg;
-        FILE *file;
-        char *content;
-        int lifi;
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
 }  bus_t;
 extern bus_t bus;
 /**
@@ -71,13 +51,8 @@ extern bus_t bus;
  */
 typedef struct instruction_s
 {
-<<<<<<< HEAD
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
-=======
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
 } instruction_t;
 
 
@@ -105,8 +80,5 @@ void fun_pall(stack_t **head, unsigned int number);
 void fun_pint(stack_t **head, unsigned int number);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void free_stack(stack_t *head);
-<<<<<<< HEAD
-=======
-
->>>>>>> 1bee233378b305fb9eabd444195a62bc8c5d40d6
+int main(int argc, char *argv[]);
 #endif

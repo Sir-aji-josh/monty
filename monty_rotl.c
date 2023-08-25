@@ -3,7 +3,6 @@
   *fun_rotl- rotates the stack to the top
   *@head: stack head
   *@counter: line_number
-
   *Return: no return
  */
 void fun_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
